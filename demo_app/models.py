@@ -3,6 +3,8 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Property(models.Model):
+    product = models.ForeignKey("Product",
+                                related_name='property_product')
     name = models.CharField(verbose_name=u'Name of the Property',
                             max_length=128)
     value = models.CharField(verbose_name=u'Value of the Property',
