@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class Property(models.Model):
     product = models.ForeignKey("Product",
-                                related_name='property_product')
+                                related_name='property_properties')
     name = models.CharField(verbose_name=u'Name of the Property',
                             max_length=128)
     value = models.CharField(verbose_name=u'Value of the Property',
@@ -20,8 +20,6 @@ class Property(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=128)
-    properties = models.ManyToManyField("Property",
-                                        related_name='product_properties')
 
     class Meta:
         verbose_name = _('Product')
