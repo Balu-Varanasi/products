@@ -11,4 +11,4 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = [PropertiesInline, ]
 
 
-admin.site.register(Product)
+admin.site.register(Product, ProductAdmin)
