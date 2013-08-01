@@ -26,4 +26,4 @@ class Product(models.Model):
         verbose_name_plural = _('Products')
 
     def __unicode__(self):
-        pass
+        return self.name
