@@ -1,0 +1,3 @@
+{{ object.name }}
+{{ object.property_properties.name }}
+{{ object.property_properties.value }}
