@@ -15,7 +15,7 @@ class Property(models.Model):
         verbose_name_plural = _('Properties')
 
     def __unicode__(self):
-        pass
+        return "%s %s" % (self.product.name, self.name)
 
 
 class Product(models.Model):
