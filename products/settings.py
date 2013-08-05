@@ -125,7 +125,6 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'demo_app',
-    'haystack',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -155,15 +154,4 @@ LOGGING = {
             'propagate': True,
         },
     }
-}
-
-HAYSTACK_CONNECTIONS = {
-    'default': {
-        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
-        'PATH': 'whoosh/indexes',
-        'STORAGE': 'file',
-        'POST_LIMIT': 128 * 1024 * 1024,
-        'INCLUDE_SPELLING': True,
-        'BATCH_SIZE': 100,
-    },
 }
