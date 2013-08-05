@@ -4,27 +4,14 @@
     <form method="get" action="/search/" >
         <input id="id_q" name="q" type="text" placeholder="Search in Products" />
         <input type="submit" value="Search">
-
-        {% if query %}
-            <h3>Results</h3>
-
-            {% for result in page.object_list %}
-                <p>
-                    <a href="#">{{ result.object.product.name }}</a> {{ result.object.name }} {{ result.object.value }}
-                </p>
-            {% empty %}
-                <p>No results found.</p>
-            {% endfor %}
-
-            {% if page.has_previous or page.has_next %}
-                <div>
-                    {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
-                    |
-                    {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
-                </div>
-            {% endif %}
-        {% else %}
-            {# Show some example queries to run, maybe query syntax, something else? #}
-        {% endif %}
     </form>
+    {% if query and results %}
+        <h3>Results</h3>
+        {% for result in results %}
+        <p><a href="#">{{ result.name }}</a></p>
+        {% endfor %}
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
 {% endblock %}
+
