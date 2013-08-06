@@ -30,6 +30,4 @@ def home(request, template_name='home.html'):
 
             results = list(set(products))
         context = {'results': results, 'query': query}
-    print context
-
     return render(request, template_name, context)
